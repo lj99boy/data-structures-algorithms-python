@@ -102,3 +102,6 @@ ENV/
 
 #ide
 .idea/
+
+#test file
+/test.py
