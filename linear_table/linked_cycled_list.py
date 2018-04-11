@@ -1,4 +1,4 @@
-from .one_way_linked_list import LNode,LinkedListUnderflow
+from linear_table.one_way_linked_list import LNode,LinkedListUnderflow
 
 class LCList:
     def __init__(self):
@@ -16,6 +16,14 @@ class LCList:
             p.next = self._rear.next
             self._rear.next = p
 
+    @property
+    def rear(self):
+        return self._rear
+
+    @rear.setter
+    def rear(self,rear):
+        self._rear = rear
+
 
     def append(self,elem):
         self.prepend(elem)
@@ -30,3 +38,20 @@ class LCList:
         else:
             self._rear.next = p.next
         return p.elem
+
+    def printall(self):
+        p = self._rear.next
+        while p is not None:
+            print(p.elem,end=' , ')
+            if p == self._rear:
+                return
+            p = p.next
+
+# lcl = LCList()
+#
+# lcl.append(1)
+# lcl.append(2)
+# lcl.append(3)
+# lcl.append(4)
+#
+# lcl.printall()
