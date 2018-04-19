@@ -38,4 +38,5 @@ def suffix_exp_evaluator(line):
     raise SyntaxError("Extra operand(s)")
 
 
-print(suffix_exp_evaluator('9 3 1 - 3 * + 10 2 / +'))
+# print(suffix_exp_evaluator('9 3 1 - 3 * + 10 2 / +'))
+print(suffix_exp_evaluator('3 5 - 6 17 4 * + * 3 /'))
