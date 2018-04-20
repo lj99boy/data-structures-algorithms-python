@@ -21,7 +21,7 @@ def infix_exp_evaluator(line):
                     raise SyntaxError('missing (')
                 operatorStack.pop()
             else:
-                if priority[operatorStack.top()] > priority[item]:
+                if not operatorStack.is_empty() and priority[operatorStack.top()] > priority[item]:
                     right = valueStack.pop()
                     left = valueStack.pop()
                     valueStack.push(calculate(left,right,operatorStack.pop()))
@@ -33,14 +33,12 @@ def infix_exp_evaluator(line):
         right = valueStack.pop()
         left = valueStack.pop()
         valueStack.push(calculate(left,right,operatorStack.pop()))
-
     return valueStack.pop()
 
-
-
-
-
 def calculate(left,right,operator):
+    left = float(left)
+    right = float(right)
+
     if operator == "+":
         res =  left+right
     elif operator == '-':
