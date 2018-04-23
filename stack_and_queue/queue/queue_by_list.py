@@ -1,7 +1,7 @@
 class QueueUnderflow(ValueError):
     pass
 
-class SQueus():
+class SQueue():
     def __init__(self,init_len = 8):
         self._len = init_len
         self._elems = [0]*init_len
@@ -24,10 +24,10 @@ class SQueus():
         self._num -= 1
         return e
 
-    def enqueue(self):
+    def enqueue(self,item):
         if self._num == self._len:
             self.__extend()
-        self._elems[(self._head+self._num) % self._len] = e
+        self._elems[(self._head+self._num) % self._len] = item
         self._num += 1
 
     def __extend(self):

@@ -23,7 +23,7 @@ def find_path(maze,pos,end):
     return False
 
 
-# using backtrace
+# using backtrace and stack
 def maze_solver(maze,start,end):
     if start == end:
         print(start)
@@ -47,3 +47,4 @@ def maze_solver(maze,start,end):
                 st.push((nextp,0))
                 break
     print("no path found")
+
