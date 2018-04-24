@@ -22,6 +22,10 @@ def find_path(maze,pos,end):
                 return True
     return False
 
+def print_path(end,pos,st):
+    print(pos)
+    while not st.is_empty():
+        print(st.pop())
 
 # using backtrace and stack
 def maze_solver(maze,start,end):
@@ -39,7 +43,7 @@ def maze_solver(maze,start,end):
                      pos[1]+dirs[i][1]
                      )
             if nextp == end:
-                # print_path(end,pos,st)
+                print_path(end,pos,st)
                 return
             if passable(maze,nextp):
                 st.push((pos,i+1))

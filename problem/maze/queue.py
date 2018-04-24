@@ -20,13 +20,12 @@ def maze_solver_queue(maze,start,end):
         pos = qu.dequeue()
         for i in range(4):
             nextp = (pos[0] + dirs[i][0],pos[1]+dirs[i][1])
+            if passable(maze,nextp):
+                if nextp == end:
+                    print("path finds")
+                    return
 
-        if passable(maze,nextp):
-            if nextp == end:
-                print("path finds")
-                return
-
-            mark(maze,nextp)
-            qu.enqueue(nextp)
+                mark(maze,nextp)
+                qu.enqueue(nextp)
     print("No path")
 
