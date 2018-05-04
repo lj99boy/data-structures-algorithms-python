@@ -47,7 +47,7 @@ class PrioQueue:
             i,j = j,2*j+1
         elems[i] = e
 
-    def buildhead(self):
+    def buildheap(self):
         end = len(self._elems)
         for i in range(end//2,-1,-1):
             self.siftdown(self._elems[i],i,end)
